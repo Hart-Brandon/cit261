@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMedTracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<header>
+    <div id="bar"></div>
+    <img src="http://portfolio.sarahbroat.com/styleguide/images/logotext.png" id="logo" alt="myMedTracker logo" />
+</header>
+<div id="center">    
+    <nav>
+        <button onclick="viewInputPage()">Input Medication</button>
+        <button onclick="viewLogPage()" class="selected">Medication Log</button>
+        <button onclick="viewAboutPage()">About Page</button>
+    </nav>
+    <main>
+
+        <article id="input">
+            <h1>Medication Input</h1>
+            <h2>Daily Medications</h2>
+            <!--Med/Dosage input-->
+
+            <form id="medInput">
+                <input type="text" id="med" placeholder="Med" onkeydown="saveMed()"/>
+                <input type="number" id="mg" placeholder="*mg" onkeydown="saveMed()"/>
+                <button type="button" id="save" onclick="store()" class="contentButton">save</button>
+                <button type="reset" id="resetBtn" class="contentButton">reset</button>
+                <button type="button" id="clear" onClick="clearLS()" class="contentButton">clear</button>
+            <br></form>
+            <div id="saves"></div>
+            <!--Med log div-->
+            <br>
+            <div id="2">You have no Medications Saved</div>
+            <div id="inputPage"></div>
+            <!--<div id="loading-animation"></div>-->
+
+        </article>
+
+        <article id="log">
+            <h1>Medication Log</h1>
+            <!--Med log div-->
+            <div id="1">You have no Medications Saved</div>
+        </article>
+
+        <article id="about">
+            <input id="searchBar" type="text" placeholder="Enter a medication">
+            <button type="button" onclick="searchDrug()" id="searchBtn" class="contentButton">Search</button>
+            <h1>About <span id="about-medicine-name"></span></h1>
+            <div id="response"></div>
+          <div id="xml"></div>
+        </article>
+        <div id="loading-animation"></div>
+        <!--<div id="loading-animation">Loading...</div>-->
+
+        <script src="js/script.js"></script>
+    </main>
+</div>
+</body>
+
+</html>

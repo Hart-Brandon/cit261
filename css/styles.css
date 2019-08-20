@@ -1,0 +1,329 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    color: #1d305f;
+    background-color: #b7cfec;
+}
+
+body {
+    padding: 0 8px;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+/************************************************************
+  HEADER/BANNER
+************************************************************/
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+#logo {
+    position: relative;
+    max-width: 300px;
+    z-index: 1;
+}
+
+#bar {
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    height: 50px;
+    background-color: #76a1d6;
+}
+
+/************************************************************
+  NAVIGATION
+************************************************************/
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav button {
+    width: 33%;
+    padding: 10px 0;
+    background-color: #76a1d6;
+    /* Medium Blue */
+    border: 2px solid #76a1d6;
+    /* Medium Blue */
+    color: #1d305f;
+    /* Dark Blue */
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.5s;
+}
+
+nav button:hover,
+nav button.selected {
+    background-color: #b7cfec; /* Light Blue */
+}
+
+/************************************************************
+  MAIN/ARTICLE FORMATTING
+************************************************************/
+
+main {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    transition: .5s ease-out;
+}
+
+/************************************************************
+  INPUT PAGE
+************************************************************/
+
+#input {
+    background: #b7cfec;
+    left: -110%;
+}
+
+#save {
+  position: relative;
+  outline: none;
+}
+
+/************************************************************
+  LOG PAGE
+************************************************************/
+
+#log {
+    background: #b7cfec;
+}
+
+.container {
+    width: 75px;
+    height: 15px;
+    background: linear-gradient(to right, #cb693e , #b7cfec);
+    border: 2px solid #76a1d6;
+    margin: -7px 25px;
+    position: absolute;
+    z-index: 1;
+}
+
+.slider {
+    width: 50px;
+    height: 11px;
+    border: 1px solid #76a1d6;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #76a1d6;
+    position: relative;
+    z-index: 2;
+    left: 0;
+    cursor: pointer;
+}
+
+.active {
+    /*
+    background: #b7cfec;
+    */
+    border: 1px solid #76a1d6;
+    left:22px;
+    -webkit-animation-name: slide; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: .8s; /* Chrome, Safari, Opera */
+    animation-name: slide;
+    animation-duration: .8s;
+}
+
+.deactive {
+  animation: slideReverse .8s;
+}
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes slide {
+        0%   {left:0px; top:0px;}
+        100% {left:22px; top:0px;}
+    }
+
+    /* Standard syntax */
+    @keyframes slide {
+        0%   {left:0px; top:0px;}
+        100% {left:22px; top:0px;}
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes slideReverse {
+        0%   {left:22px;}
+        100% {left:0px;}
+    }
+
+    /* Standard syntax */
+    @keyframes slideReverse {
+        0%   {left:22px;}
+        100% {left:0px;}
+    }
+
+
+ th .medList {
+    color: #1d305f;
+}
+/************************************************************
+  ABOUT PAGE
+************************************************************/
+
+#about {
+    background: #b7cfec;
+    left: 110%;
+}
+
+/*#loading-animation {*/
+    /*display: none;*/
+    /*position: absolute;*/
+    /*top: 45px; */
+/*}*/
+
+/* Needed for error message to show properly */
+#searchBtn {
+  position: relative;
+  outline: none;
+}
+
+
+/************************************************************
+  GENERAL FORMATTING
+************************************************************/
+
+h1 {
+    color: #1d305f;
+    text-transform: capitalize;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.medbtns {
+    border-radius: 20px;
+    border: 3px solid #76a1d6;
+    background: #76a1d6;
+    width: 25px;
+    color: #1d305f;
+    text-align: center;
+    font-weight: bolder;
+    font-family: sans-serif;
+    margin-left: 25px;
+}
+
+.smpadding {
+    padding-right: 20px;
+}
+
+.padding {
+    padding-right: 90px;
+}
+
+.contentButton {
+    height: 22px;
+    vertical-align: top;
+    background-color: #76a1d6;
+    /* Medium Blue */
+    border: 2px solid #76a1d6;
+    /* Medium Blue */
+    color: #1d305f;
+    /* Dark Blue */
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.5s;
+}
+
+.contentButton:hover {
+    background-color: #b7cfec; /* Light Blue */
+}
+
+
+#loading-animation {
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    background-color: #333;
+    display: none;
+    position: absolute;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+/* Error messages if textboxes are blank */
+#save.formError:after {
+  content: "Both Fields Required";
+}
+
+#searchBtn.formError:after {
+  content: "Enter a medication";
+}
+
+.formError:after {
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: -75px;
+  width: 200px;
+  color: red;
+  opacity: 0;
+  -webkit-animation-name: appear; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+  animation-name: appear;
+  animation-duration: 3s;
+}
+
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+  0%   {opacity: 0;}
+  25%  {opacity: 1;}
+  75%  {opacity: 1;}
+  100% {opacity: 0;}
+}
+
